@@ -128,7 +128,7 @@ export function LoginForm({
           </CardTitle>
           <CardDescription>
             {isLogin
-              ? "Login with your Apple or Google account"
+              ? "Login"
               : "Sign up using your email"}
           </CardDescription>
         </CardHeader>
@@ -179,7 +179,7 @@ export function LoginForm({
                     className="border rounded px-3 py-2"
                   >
                     <option value="User">User</option>
-                    <option value="SA">SA</option>
+                    <option value="SA">SuperAdmin</option>
                     <option value="HR">HR</option>
                     <option value="Finance">Finance</option>
                   </select>

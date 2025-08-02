@@ -1,9 +1,9 @@
-import LoginRegister from "./auth/LoginRegister";
+import LoginPage from "./auth/page";
 
 export default function Home() {
   return (
     <main>
-      <LoginRegister />
+      <LoginPage />
     </main>
   );
 }

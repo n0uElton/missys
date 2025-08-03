@@ -5,13 +5,25 @@ import {
   AudioWaveform,
   BookOpen,
   Bot,
+  ClipboardList,
+  ClipboardMinus,
+  Clock,
   Command,
+  FileClock,
+  Flag,
   Frame,
   GalleryVerticalEnd,
+  HandCoins,
+  IdCardLanyard,
   Map,
   PieChart,
+  Receipt,
   Settings2,
+  Spotlight,
+  SquarePen,
   SquareTerminal,
+  UserRound,
+  
 } from "lucide-react";
 
 import { NavFinance } from "@/components/nav-finance";
@@ -63,7 +75,7 @@ const data = {
     {
       title: "Payroll Management",
       url: "#",
-      icon: Bot,
+      icon: HandCoins,
       items: [
         {
           title: "Process Payroll",
@@ -83,7 +95,7 @@ const data = {
     {
       title: "Tax Report",
       url: "#",
-      icon: BookOpen,
+      icon: ClipboardMinus,
       items: [
         {
           title: "Generate BIR Forms",
@@ -154,7 +166,7 @@ const data = {
     {
       title: "Employee Management",
       url: "#",
-      icon: Bot,
+      icon: IdCardLanyard,
       items: [
         {
           title: "List of Employees",
@@ -175,7 +187,7 @@ const data = {
       {
       title: "Masterlist of Timesheet",
       url: "#",
-      icon: SquareTerminal,
+      icon: ClipboardList,
     },
     
     {
@@ -198,7 +210,7 @@ const data = {
      {
       title: "Performance Review",
       url: "#",
-      icon: BookOpen,
+      icon: Spotlight,
       items: [
         {
           title: "Employee Evaluations",
@@ -252,7 +264,7 @@ const data = {
     {
       title: "Request",
       url: "#",
-      icon: Bot,
+      icon: SquarePen,
       items: [
         {
           title: "Leave Request",
@@ -273,13 +285,13 @@ const data = {
       {
       title: "Update Log",
       url: "#",
-      icon: SquareTerminal,
+      icon: FileClock,
     },
     
     {
       title: "OT",
       url: "#",
-      icon: BookOpen,
+      icon: Clock,
       items: [
         {
           title: "OT Request Form",
@@ -296,7 +308,7 @@ const data = {
      {
       title: "Payslip",
       url: "#",
-      icon: BookOpen,
+      icon: Receipt,
       items: [
         {
           title: "Monthly Payslip View",
@@ -330,7 +342,7 @@ const data = {
      {
       title: "Attendance",
       url: "#",
-      icon: BookOpen,
+      icon: Flag,
       items: [
         {
           title: "Daily Time Record",
@@ -346,7 +358,7 @@ const data = {
      {
       title: "Profile",
       url: "#",
-      icon: BookOpen,
+      icon: UserRound,
       items: [
         {
           title: "View Personal Info",

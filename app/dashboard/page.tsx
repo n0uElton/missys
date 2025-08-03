@@ -100,9 +100,6 @@ export default function Page() {
     };
   }, [router]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
   return (
     <SidebarProvider>
       <Toaster position="top-center" />

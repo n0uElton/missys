@@ -36,7 +36,8 @@ export function NavFinance({
     <SidebarGroup>
       <SidebarGroupLabel>Finance</SidebarGroupLabel>
       <SidebarMenu>
-        {items.map((item) => (
+        {items.map((item) =>
+          item.items && item.items.length > 1 ? (
           <Collapsible
             key={item.title}
             asChild
@@ -66,7 +67,18 @@ export function NavFinance({
               </CollapsibleContent>
             </SidebarMenuItem>
           </Collapsible>
-        ))}
+        ): (
+            // Render simple item if no or only 1 subitem
+            <SidebarMenuItem key={item.title}>
+              <SidebarMenuButton asChild tooltip={item.title}>
+                <a href={item.url}>
+                  {item.icon && <item.icon />}
+                  <span>{item.title}</span>
+                </a>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          )
+        )}
       </SidebarMenu>
     </SidebarGroup>
   );

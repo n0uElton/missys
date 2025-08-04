@@ -57,9 +57,7 @@ export default function Page() {
         });
       } else {
         setUsername(data.name);
-        toast.message(
-          <div className="text-center">Welcome, {data.name || "User"}</div>
-        );
+        toast.message(`Welcome, ${data.name || "User"}`);
       }
 
       setLoading(false);

@@ -76,9 +76,9 @@ export const navHR = [
     url: "#",
     icon: IdCardLanyard,
     items: [
-      { title: "List of Employees", url: "#" },
-      { title: "Add/Edit Employee Info", url: "#" },
-      { title: "Employment Status History", url: "#" },
+      { title: "List of Employees", url: "/hr/employee" },
+      { title: "Add/Edit Employee Info", url: "/hr/addemployee" },
+      { title: "Employment Status History", url: "/hr/status" },
     ],
   },
   {

@@ -16,8 +16,12 @@ import { supabase } from "@/supabaseClient";
 import { useEffect, useState } from "react";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const [user, setUser] = useState<{ name: string; email: string; avatar: string, role: string} | null>(null);
-
+  const [user, setUser] = useState<{
+    name: string;
+    email: string;
+    avatar: string;
+    role: string;
+  } | null>(null);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -32,7 +36,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           .single();
 
         if (data) {
-          setUser({ name: data.name, email: data.email, avatar: "", role: data.role});
+          setUser({
+            name: data.name,
+            email: data.email,
+            avatar: "",
+            role: data.role,
+          });
         } else {
           console.error("User fetch error:", error);
         }
@@ -46,9 +55,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarContent>
-        {(user.role === "Finance" || user.role === "SA") && <NavFinance items={navFinance} />}
+        {(user.role === "Finance" || user.role === "SA") && (
+          <NavFinance items={navFinance} />
+        )}
         {(user.role === "HR" || user.role === "SA") && <Navhr items={navHR} />}
-        {(user.role === "User" || user.role === "SA") && <Navemployee items={navEmployee} />}
+        {(user.role === "User" || user.role === "SA") && (
+          <Navemployee items={navEmployee} />
+        )}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={user} />

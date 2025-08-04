@@ -18,8 +18,9 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/supabaseClient";
 import { useRouter } from "next/navigation";
 import { toast, Toaster } from "sonner";
+import Link from "next/link";
 
-export default function Page() {
+export default function NotFound() {
   const router = useRouter();
   const [user, setUser] = useState<any>(null);
   const [username, setUsername] = useState<string | null>(null);
@@ -98,6 +99,14 @@ export default function Page() {
     };
   }, [router]);
 
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <SidebarProvider>
       <Toaster position="top-center" />
@@ -113,18 +122,32 @@ export default function Page() {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
-                    Building Your Application
-                  </BreadcrumbLink>
+                  <BreadcrumbLink href="/">Home</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                  <BreadcrumbPage>404 - Not Found</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
           </div>
         </header>
+        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] p-4">
+          <h1 className="text-6xl font-bold text-gray-800 mb-4">404</h1>
+          <h2 className="text-2xl font-semibold text-gray-600 mb-6">
+            Page Not Found
+          </h2>
+          <p className="text-gray-500 mb-8 text-center max-w-md">
+            Sorry, we couldn't find the page you're looking for. It might have
+            been moved or deleted.
+          </p>
+          <Link
+            href="/"
+            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Back to Home
+          </Link>
+        </div>
       </SidebarInset>
     </SidebarProvider>
   );

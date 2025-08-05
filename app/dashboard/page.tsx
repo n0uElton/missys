@@ -42,7 +42,7 @@ export default function Page() {
       // Fetch username from the users table
       const { data, error } = await supabase
         .from("profiles")
-        .select("name")
+        .select("full_name")
         .eq("id", user.id)
         .single();
 
@@ -56,8 +56,8 @@ export default function Page() {
           description: "Please try again later.",
         });
       } else {
-        setUsername(data.name);
-        toast.message(`Welcome, ${data.name || "User"}`);
+        setUsername(data.full_name);
+        toast.message(`Welcome, ${data.full_name || "User"}`);
       }
 
       setLoading(false);
@@ -76,7 +76,7 @@ export default function Page() {
           // Fetch username on auth state change
           const { data, error } = await supabase
             .from("profiles")
-            .select("name")
+            .select("full_name")
             .eq("id", session.user.id)
             .single();
 
@@ -87,7 +87,7 @@ export default function Page() {
             );
             setUsername(null);
           } else {
-            setUsername(data.name);
+            setUsername(data.full_name);
           }
         }
       }

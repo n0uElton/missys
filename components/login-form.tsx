@@ -18,8 +18,8 @@ import { useRouter } from "next/navigation";
 interface AuthFormState {
   email: string;
   password: string;
-  name?: string;
-  role?: "SA" | "HR" | "Finance" | "User";
+  full_name?: string;
+  role?: "Admin" | "HR" | "Finance" | "User";
 }
 
 export function LoginForm({
@@ -30,7 +30,7 @@ export function LoginForm({
   const [formData, setFormData] = useState<AuthFormState>({
     email: "",
     password: "",
-    name: "",
+    full_name: "",
     role: "User",
   });
   const [error, setError] = useState<string | null>(null);
@@ -48,7 +48,7 @@ export function LoginForm({
 
   const toggleForm = useCallback(() => {
     setIsLogin((prev) => !prev);
-    setFormData({ email: "", password: "", name: "", role: "User" });
+    setFormData({ email: "", password: "", full_name: "", role: "User" });
     setError(null);
     setMessage(null);
   }, []);
@@ -80,7 +80,7 @@ export function LoginForm({
           options: {
             emailRedirectTo: "http://localhost:3000/auth/callback",
             data: {
-              name: formData.name,
+              full_name: formData.full_name,
               role: formData.role,
             },
           },
@@ -141,7 +141,7 @@ export function LoginForm({
                   <Input
                     id="name"
                     name="name"
-                    value={formData.name}
+                    value={formData.full_name}
                     onChange={handleInputChange}
                     required
                   />
@@ -179,7 +179,7 @@ export function LoginForm({
                     className="border rounded px-3 py-2"
                   >
                     <option value="User">User</option>
-                    <option value="SA">SuperAdmin</option>
+                    <option value="Admin">Admin</option>
                     <option value="HR">HR</option>
                     <option value="Finance">Finance</option>
                   </select>

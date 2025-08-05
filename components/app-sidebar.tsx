@@ -31,17 +31,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       if (userId) {
         const { data, error } = await supabase
           .from("profiles")
-          .select("name, email, role")
+          .select("full_name, email, role")
           .eq("id", userId)
           .single();
 
         if (data) {
           setUser({
-            name: data.name,
+            name: data.full_name,
             email: data.email,
             avatar: "",
             role: data.role,
           });
+          console.log(data.role)
         } else {
           console.error("User fetch error:", error);
         }
@@ -51,22 +52,23 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     fetchUser();
   }, []);
 
-  if (!user) return <div>Loading...</div>;
   return (
     <Sidebar collapsible="icon" {...props}>
-      <SidebarContent>
-        {(user.role === "Finance" || user.role === "SA") && (
-          <NavFinance items={navFinance} />
-        )}
-        {(user.role === "HR" || user.role === "SA") && <Navhr items={navHR} />}
-        {(user.role === "User" || user.role === "SA") && (
-          <Navemployee items={navEmployee} />
-        )}
-      </SidebarContent>
-      <SidebarFooter>
-        <NavUser user={user} />
-      </SidebarFooter>
-      <SidebarRail />
-    </Sidebar>
+  <SidebarContent>
+    {user && (user.role === "Finance" || user.role === "Admin") && (
+      <NavFinance items={navFinance} />
+    )}
+    {user && (user.role === "HR" || user.role === "Admin") && (
+      <Navhr items={navHR} />
+    )}
+    {user && (user.role === "User" || user.role === "Admin") && (
+      <Navemployee items={navEmployee} />
+    )}
+  </SidebarContent>
+  <SidebarFooter>
+    {user && <NavUser user={user} />}
+  </SidebarFooter>
+  <SidebarRail />
+</Sidebar>
   );
 }

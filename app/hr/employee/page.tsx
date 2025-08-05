@@ -1,6 +1,7 @@
 "use client";
 
 import { AppSidebar } from "@/components/app-sidebar";
+import { DataTable } from "@/components/data-table";
 
 import {
   Breadcrumb,
@@ -16,6 +17,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { columns } from "./columns";
 
 export default function Page() {
   const mockEmployees = [
@@ -73,35 +75,11 @@ export default function Page() {
             </Breadcrumb>
           </div>
         </header>
-
-        <div className="p-4 pt-0">
+        <Separator />
+        <div className="p-4 pt-4">
           <h2 className="text-xl font-semibold mb-4">Employee List</h2>
-
-          <div className="overflow-auto rounded-lg border shadow-sm">
-            <table className="min-w-full text-sm">
-              <thead className="bg-gray-100">
-                <tr>
-                  <th className="px-4 py-2 text-left">Full Name</th>
-                  <th className="px-4 py-2 text-left">Email</th>
-                  <th className="px-4 py-2 text-left">Department</th>
-                  <th className="px-4 py-2 text-left">Job Title</th>
-                  <th className="px-4 py-2 text-left">Date of Joining</th>
-                </tr>
-              </thead>
-              <tbody>
-                {mockEmployees.map((emp) => (
-                  <tr key={emp.employee_id} className="border-t">
-                    <td className="px-4 py-2">{emp.full_name}</td>
-                    <td className="px-4 py-2">{emp.email}</td>
-                    <td className="px-4 py-2">{emp.department}</td>
-                    <td className="px-4 py-2">{emp.job_title}</td>
-                    <td className="px-4 py-2">
-                      {new Date(emp.date_of_joining).toLocaleDateString()}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="container mx-auto p-4 border rounded-md">
+            <DataTable columns={columns} data={mockEmployees} />
           </div>
         </div>
       </SidebarInset>

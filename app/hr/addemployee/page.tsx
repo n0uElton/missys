@@ -91,9 +91,6 @@ export default function Page() {
         });
       } else {
         setUsername(data.name);
-        toast.message(
-          <div className="text-center">Welcome, {data.name || "User"}</div>
-        );
       }
 
       setLoading(false);
@@ -249,12 +246,13 @@ export default function Page() {
       <SidebarInset>
         <header className="flex h-16 items-center gap-2 px-4">
           <SidebarTrigger />
-          <Separator orientation="vertical" className="h-4" />
+          <Separator orientation="vertical"
+              className="mr-2 data-[orientation=vertical]:h-4" />
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
                 <BreadcrumbLink href="#">
-                  Building Your Application
+                  HR
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="hidden md:block" />

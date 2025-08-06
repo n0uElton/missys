@@ -140,7 +140,8 @@ export function LoginForm({
                   <Label htmlFor="name">Name</Label>
                   <Input
                     id="name"
-                    name="name"
+                    name="full_name"
+                    type="text"
                     value={formData.full_name}
                     onChange={handleInputChange}
                     required
@@ -195,8 +196,8 @@ export function LoginForm({
                     ? "Logging in..."
                     : "Registering..."
                   : isLogin
-                  ? "Login"
-                  : "Register"}
+                    ? "Login"
+                    : "Register"}
               </Button>
               <div className="text-center text-sm">
                 {isLogin ? (

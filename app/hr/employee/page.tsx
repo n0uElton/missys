@@ -76,9 +76,9 @@ export default function Page() {
           </div>
         </header>
         <Separator />
-        <div className="p-4 pt-4">
+        <div className="p-8 pt-8">
           <h2 className="text-xl font-semibold mb-4">Employee List</h2>
-          <div className="container mx-auto p-4 border rounded-md">
+          <div className="container p-4 border rounded-md">
             <DataTable columns={columns} data={mockEmployees} />
           </div>
         </div>

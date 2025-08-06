@@ -9,6 +9,7 @@ export type Payment = {
     employee_id: number
     full_name: string
     email: string
+    phone_number: number
     department: string
     job_title: string
     date_of_joining: string
@@ -89,8 +90,9 @@ export const columns: ColumnDef<Payment>[] = [
                     <DropdownMenuContent align="end">
                         <DropdownMenuLabel>Actions</DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>View Employee</DropdownMenuItem>
-                        <DropdownMenuItem>Delete Employee</DropdownMenuItem>
+                        <DropdownMenuItem>View Info</DropdownMenuItem>
+                        <DropdownMenuItem>Delete Info</DropdownMenuItem>
+                        <DropdownMenuItem><span className="text-red-500">Delete</span></DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             )

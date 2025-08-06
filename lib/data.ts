@@ -21,46 +21,46 @@ import {
 export const navFinance = [
   {
     title: "Dashboard",
-    url: "#",
+    url: "/404",
     icon: SquareTerminal,
   },
   {
     title: "Payroll Management",
-    url: "#",
+    url: "/404",
     icon: HandCoins,
     items: [
-      { title: "Process Payroll", url: "#" },
-      { title: "View Salary Summary", url: "#" },
-      { title: "Apply Deductions", url: "#" },
+      { title: "Process Payroll", url: "/404" },
+      { title: "View Salary Summary", url: "/404" },
+      { title: "Apply Deductions", url: "/404" },
     ],
   },
   {
     title: "Tax Report",
-    url: "#",
+    url: "/404",
     icon: ClipboardMinus,
     items: [
-      { title: "Generate BIR Forms", url: "#" },
-      { title: "View Tax History", url: "#" },
+      { title: "Generate BIR Forms", url: "/404" },
+      { title: "View Tax History", url: "/404" },
     ],
   },
   {
     title: "Financial Reports",
-    url: "#",
+    url: "/404",
     icon: BookOpen,
     items: [
-      { title: "Employee Cost Summary", url: "#" },
-      { title: "Monthly Expenses", url: "#" },
+      { title: "Employee Cost Summary", url: "/404" },
+      { title: "Monthly Expenses", url: "/404" },
     ],
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/404",
     icon: Settings2,
     items: [
-      { title: "General", url: "#" },
-      { title: "Team", url: "#" },
-      { title: "Billing", url: "#" },
-      { title: "Limits", url: "#" },
+      { title: "General", url: "/404" },
+      { title: "Team", url: "/404" },
+      { title: "Billing", url: "/404" },
+      { title: "Limits", url: "/404" },
     ],
   },
 ];
@@ -68,12 +68,12 @@ export const navFinance = [
 export const navHR = [
   {
     title: "Dashboard",
-    url: "#",
+    url: "/404",
     icon: SquareTerminal,
   },
   {
     title: "Employee Management",
-    url: "#",
+    url: "/404",
     icon: IdCardLanyard,
     items: [
       { title: "List of Employees", url: "/hr/employee" },
@@ -83,36 +83,36 @@ export const navHR = [
   },
   {
     title: "Masterlist of Timesheet",
-    url: "#",
+    url: "/404",
     icon: ClipboardList,
   },
   {
     title: "Leave Management",
-    url: "#",
+    url: "/404",
     icon: BookOpen,
     items: [
-      { title: "Leave History", url: "#" },
-      { title: "Approve/Decline Leave", url: "#" },
+      { title: "Leave History", url: "/404" },
+      { title: "Approve/Decline Leave", url: "/404" },
     ],
   },
   {
     title: "Performance Review",
-    url: "#",
+    url: "/404",
     icon: Spotlight,
     items: [
-      { title: "Employee Evaluations", url: "#" },
-      { title: "Review Templates", url: "#" },
+      { title: "Employee Evaluations", url: "/404" },
+      { title: "Review Templates", url: "/404" },
     ],
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/404",
     icon: Settings2,
     items: [
-      { title: "General", url: "#" },
-      { title: "Team", url: "#" },
-      { title: "Billing", url: "#" },
-      { title: "Limits", url: "#" },
+      { title: "General", url: "/404" },
+      { title: "Team", url: "/404" },
+      { title: "Billing", url: "/404" },
+      { title: "Limits", url: "/404" },
     ],
   },
 ];
@@ -120,67 +120,67 @@ export const navHR = [
 export const navEmployee = [
   {
     title: "Dashboard",
-    url: "#",
+    url: "/404",
     icon: SquareTerminal,
   },
   {
     title: "Request",
-    url: "#",
+    url: "/404",
     icon: SquarePen,
     items: [
-      { title: "Leave Request", url: "#" },
-      { title: "Change Schedule Request", url: "#" },
-      { title: "Travel Request", url: "#" },
+      { title: "Leave Request", url: "/404" },
+      { title: "Change Schedule Request", url: "/404" },
+      { title: "Travel Request", url: "/404" },
     ],
   },
   {
     title: "Update Log",
-    url: "#",
+    url: "/404",
     icon: FileClock,
   },
   {
     title: "OT",
-    url: "#",
+    url: "/404",
     icon: Clock,
     items: [
-      { title: "OT Request Form", url: "#" },
-      { title: "OT Status", url: "#" },
+      { title: "OT Request Form", url: "/404" },
+      { title: "OT Status", url: "/404" },
     ],
   },
   {
     title: "Payslip",
-    url: "#",
+    url: "/404",
     icon: Receipt,
     items: [
-      { title: "Monthly Payslip View", url: "#" },
-      { title: "Download Payslip PDF", url: "#" },
+      { title: "Monthly Payslip View", url: "/404" },
+      { title: "Download Payslip PDF", url: "/404" },
     ],
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/404",
     icon: Settings2,
     items: [
-      { title: "Change password", url: "#" },
-      { title: "Notification Preferences", url: "#" },
+      { title: "Change password", url: "/404" },
+      { title: "Notification Preferences", url: "/404" },
     ],
   },
   {
     title: "Attendance",
-    url: "#",
+    url: "/404",
     icon: Flag,
     items: [
-      { title: "Daily Time Record", url: "#" },
-      { title: "Log In/Out History", url: "#" },
+      { title: "Daily Time Record", url: "/404" },
+      { title: "Log In/Out History", url: "/404" },
     ],
   },
   {
     title: "Profile",
-    url: "#",
+    url: "/404",
     icon: UserRound,
     items: [
-      { title: "View Personal Info", url: "#" },
-      { title: "Update Contact Details", url: "#" },
+      { title: "View Personal Info", url: "/404" },
+      { title: "Update Contact Details", url: "/404" },
     ],
   },
 ];

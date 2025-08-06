@@ -43,7 +43,7 @@ export default function NotFound() {
       // Fetch username from the users table
       const { data, error } = await supabase
         .from("profiles")
-        .select("name")
+        .select("full_name")
         .eq("id", user.id)
         .single();
 
@@ -57,8 +57,7 @@ export default function NotFound() {
           description: "Please try again later.",
         });
       } else {
-        setUsername(data.name);
-        toast.message(`Welcome, ${data.name || "User"}`);
+        setUsername(data.full_name);
       }
 
       setLoading(false);
@@ -77,7 +76,7 @@ export default function NotFound() {
           // Fetch username on auth state change
           const { data, error } = await supabase
             .from("profiles")
-            .select("name")
+            .select("full_name")
             .eq("id", session.user.id)
             .single();
 
@@ -88,7 +87,7 @@ export default function NotFound() {
             );
             setUsername(null);
           } else {
-            setUsername(data.name);
+            setUsername(data.full_name);
           }
         }
       }
@@ -114,11 +113,7 @@ export default function NotFound() {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="/">Home</BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>404 - Not Found</BreadcrumbPage>
+                  <BreadcrumbLink href="/dashboard">404 - Not Found</BreadcrumbLink>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -134,8 +129,8 @@ export default function NotFound() {
             been moved or deleted.
           </p>
           <Link
-            href="/"
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            href="/dashboard"
+            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             Back to Home
           </Link>

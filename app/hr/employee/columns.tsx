@@ -6,7 +6,7 @@ import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 
 export type Payment = {
-    employee_id: number
+    employee_id: number | string
     full_name: string
     email: string
     department: string
